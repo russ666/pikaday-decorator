@@ -29,7 +29,6 @@
             <pikaday-decorator first-day="1" position="top right" locale="fr">
                 <input type="text" name="date1" />
             </pikaday-decorator>
-            <button type="submit">Test</button>
         </p>
 
         <p>
@@ -38,7 +37,21 @@
                 <button type="button" pikaday-decorator-trigger>pick</button>
             </pikaday-decorator>
         </p>
+
+        <button type="submit">Submit</button>
+
     </form>
+    <button type="button" id="add">Add pikaday decorator</button>
+<script>
+    document.getElementById('add').addEventListener('click', function () {
+        if(document.body != null) {
+            var s = '<pikaday-decorator><input type="text"/></pikaday-decorator>';
+            var p = document.createElement('p');
+            p.innerHTML = s;
+            document.querySelector('form').appendChild(p);
+        }
+    }, false)
+</script>
 </div>
 </body>
 </html>
