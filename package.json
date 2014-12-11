@@ -2,14 +2,14 @@
     "author": {
         "name": "Florian Roy"
     },
-    "description": "Pikaday proxy for polymer",
+    "description": "Pikaday decorator for polymer",
     "devDependencies": {
         "web-component-tester": "~2.0.1"
     },
     "name": "pikaday-decorator",
     "repository": {
         "type": "git",
-        "url": "https://github.com/display-interactive/pikaday-polymer-proxy.git"
+        "url": "https://github.com:display-interactive/pikaday-decorator.git"
     },
     "version": "0.0.1"
 }

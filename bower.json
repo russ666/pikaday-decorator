@@ -1,10 +1,10 @@
 {
-    "name": "pikaday-polymer-proxy",
+    "name": "pikaday-decorator",
     "version": "0.0.1",
     "authors": [
         "Florian Roy"
     ],
-    "description": "Pikaday proxy for polymer",
+    "description": "Pikaday decorator for polymer",
     "main": "element/*",
     "ignore": [
         "**/.*",
