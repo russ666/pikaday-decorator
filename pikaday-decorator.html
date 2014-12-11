@@ -1,0 +1,14 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="stylesheet" href="../pikaday/css/pikaday.css">
+<script src="../momentjs/moment.js"></script>
+<<script src="../pikaday/pikaday.js"></script>
+<script src="pikaday-decorator.js"></script>
+
+<polymer-element name="pikaday-decorator" attributes="format locale position reposition container default-date set-default-date first-day min-date max-date year-range show-week-number rtl year-suffix show-month-after-year number-of-months main-calendar on-select on-open on-close on-draw">
+    <template>
+        <content></content>
+    </template>
+    <script>
+        Polymer('pikaday-decorator', pikadayDecorator);
+    </script>
+</polymer-element>

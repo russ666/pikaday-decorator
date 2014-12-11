@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <meta charset="utf-8">
+    <title>pikaday demo</title>
+    <script src="../webcomponentsjs/webcomponents.js"></script>
+    <link rel="import" href="pikaday-decorator.html">
+    <style>
+        #container {
+            padding-top: 15%;
+            text-align: center;
+        }
+
+        pikaday-decorator {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body unresolved>
+
+<div id="container">
+    <h1><code>Pikaday with polymer</code> in action:</h1>
+
+    <form method="GET">
+        <p>
+            <pikaday-decorator first-day="1" position="top right" locale="fr">
+                <input type="text" name="date1" />
+            </pikaday-decorator>
+            <button type="submit">Test</button>
+        </p>
+
+        <p>
+            <pikaday-decorator format="DD/MM/YYYY">
+                <input type="text" name="date2" />
+                <button type="button" pikaday-decorator-trigger>pick</button>
+            </pikaday-decorator>
+        </p>
+    </form>
+</div>
+</body>
+</html>
