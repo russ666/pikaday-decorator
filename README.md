@@ -26,7 +26,7 @@ it will use [pikaday-decorator-trigger] to set the 'trigger' param of pikaday
 
 ##options (option are not tested)
  
-For options seehttps://github.com/dbushell/Pikaday#user-content-configuration
+For options see https://github.com/dbushell/Pikaday#user-content-configuration
 
 ```CODE
  locale: 'en', //see 'i18n'. default language if you set 'fr' it will load the french translation
@@ -50,4 +50,4 @@ For options seehttps://github.com/dbushell/Pikaday#user-content-configuration
  'on-open': null, //see 'onOpen'
  'on-close': null, //see 'onClose'
  'on-draw': null,//see 'onDraw'
- ```
+ ``
