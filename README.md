@@ -1,7 +1,7 @@
 pikaday-decorator
 =================
 
-Polymer pikaday wrapper
+Pikaday with Polymer
 
 
 ##Basic use:

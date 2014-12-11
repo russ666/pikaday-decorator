@@ -2,7 +2,7 @@
     "author": {
         "name": "Florian Roy"
     },
-    "description": "Pikaday decorator for polymer",
+    "description": "Pikaday decorator with polymer",
     "devDependencies": {
         "web-component-tester": "~2.0.1"
     },
