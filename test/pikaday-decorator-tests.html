@@ -16,13 +16,13 @@
 <body>
 
 <p>
-    <pikaday-decorator id="typicalPicker">
+    <pikaday-decorator locale="fr" id="typicalPicker">
         <input type="text" name="date1" />
     </pikaday-decorator>
 </p>
 
 <p>
-    <pikaday-decorator id="pickerButton">
+    <pikaday-decorator locale="fr" id="pickerButton">
         <input type="text" name="date2" />
         <button type="button" pikaday-decorator-trigger>pick</button>
     </pikaday-decorator>
@@ -38,6 +38,16 @@
         test('pikaday instantiated', function() {
             assert.equal(2, document.querySelectorAll('.pika-single').length);
         });
+
+        test('locale loaded', function() {
+            var el = document.getElementById('typicalPicker');
+
+            assert.equal('fr', el.locale);
+            setTimeout(function() {
+                assert.equal('Mois précédent', el.instance._o.i18n.nextMonth);
+            }, 1000);
+        });
+
 
         //todo: test that options are working
     });

@@ -51,6 +51,11 @@
             document.querySelector('form').appendChild(p);
         }
     }, false)
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var el = document.querySelector('pikaday-decorator[locale="fr"]');
+        console.dir(el);
+    }, false)
 </script>
 </div>
 </body>

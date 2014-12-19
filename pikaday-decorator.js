@@ -26,17 +26,17 @@
 
         /**
          * Load localisation file
-         * @param {pikadayInput} pikadayInput
+         * @param {pikadayDecorator} pikadayInput
          * @param {Function} [callback=undefined] callback
          */
         loadI18n = function(pikadayInput, callback) {
-            var filename = 'pikaday.'+pikadayInput.locale+'.js';
-
+            var dirname = document.location.pathname.replace(/\/[^\/]*$/,'');
+            var filename = dirname + '/pikaday.'+pikadayInput.locale+'.js';
 
             load(filename, callback, function() {
                 //load i18n file if not working try to load with the language (en) instead of locale (en_US)
                 if ((new RegExp('_')).test(pikadayInput.locale)) {
-                    load('pikaday.'+pikadayInput.locale.split('_')[0]+'.js', callback);
+                    load(dirname + '/pikaday.'+pikadayInput.locale.split('_')[0]+'.js', callback);
                 }
             });
         },
@@ -86,7 +86,7 @@
         /**
          * input in the Light DOM (distributed node)
          */
-        input: null,
+        instance: null,
 
         /**
          * Constructor
@@ -94,7 +94,8 @@
          * Not implementing isRTL (use <html dir="rtl"> instead)
          */
         ready: function() {
-            var input = this.querySelector('input'),
+            var that = this,
+                input = this.querySelector('input'),
                 trigger = this.querySelector('[pikaday-decorator-trigger]'),
                 opts = {
                     field: input,
@@ -125,11 +126,11 @@
                 opts.trigger = trigger;
             }
 
-            var picker = new Pikaday(opts);
+            this.instance = new Pikaday(opts);
 
             //dirty load i18n because, i can't achieve to tests when i instanciate asynchronously
             loadI18n(this, function() {
-                picker._o.i18n = i18n;
+                that.instance._o.i18n = i18n;
             });
         }
     }
