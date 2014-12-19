@@ -1,53 +1,6 @@
 (function() {
     'use strict';
 
-    var
-        /**
-         * Load script
-         *
-         * @param {String} url
-         * @param {Function} [successCallback=undefined] successCallback
-         * @param {Function} [errorCallback=undefined] errorCallback
-         */
-        load = function (url, successCallback, errorCallback) {
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    eval(xhr.responseText);
-                    if (successCallback) successCallback(xhr.responseText);
-                } else {
-                    if (errorCallback) errorCallback(xhr.responseText);
-                }
-            };
-
-            xhr.open('GET', url, true);
-            xhr.send();
-        },
-
-        /**
-         * Load localisation file
-         * @param {pikadayDecorator} pikadayInput
-         * @param {Function} [callback=undefined] callback
-         */
-        loadI18n = function(pikadayInput, callback) {
-            var dirname = document.location.pathname.replace(/\/[^\/]*$/,'');
-            var filename = dirname + '/pikaday.'+pikadayInput.locale+'.js';
-
-            load(filename, callback, function() {
-                //load i18n file if not working try to load with the language (en) instead of locale (en_US)
-                if ((new RegExp('_')).test(pikadayInput.locale)) {
-                    load(dirname + '/pikaday.'+pikadayInput.locale.split('_')[0]+'.js', callback);
-                }
-            });
-        },
-
-        /**
-         * Default locale for pikaday
-         * @type {{previousMonth: string, nextMonth: string, months: string[], weekdays: string[], weekdaysShort: string[]}}
-         */
-        i18n = null
-    ;
-
     window.pikadayDecorator = {
         /**
          * Default locale
@@ -94,8 +47,7 @@
          * Not implementing isRTL (use <html dir="rtl"> instead)
          */
         ready: function() {
-            var that = this,
-                input = this.querySelector('input'),
+            var input = this.querySelector('input'),
                 trigger = this.querySelector('[pikaday-decorator-trigger]'),
                 opts = {
                     field: input,
@@ -122,16 +74,15 @@
                 }
             ;
 
+            if (this.locale !== 'en') {
+                opts.i18n = PikadayDecorator.i18n[this.locale];
+            }
+
             if (trigger) {
                 opts.trigger = trigger;
             }
 
             this.instance = new Pikaday(opts);
-
-            //dirty load i18n because, i can't achieve to tests when i instanciate asynchronously
-            loadI18n(this, function() {
-                that.instance._o.i18n = i18n;
-            });
         }
     }
 }());

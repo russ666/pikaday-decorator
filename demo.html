@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <title>pikaday demo</title>
     <script src="../webcomponentsjs/webcomponents.js"></script>
+    <script src="i18n/pikaday-decorator.fr.js"></script>
     <link rel="import" href="pikaday-decorator.html">
     <style>
         #container {
@@ -41,22 +42,6 @@
         <button type="submit">Submit</button>
 
     </form>
-    <button type="button" id="add">Add pikaday decorator</button>
-<script>
-    document.getElementById('add').addEventListener('click', function () {
-        if(document.body != null) {
-            var s = '<pikaday-decorator><input type="text"/></pikaday-decorator>';
-            var p = document.createElement('p');
-            p.innerHTML = s;
-            document.querySelector('form').appendChild(p);
-        }
-    }, false)
-
-    document.addEventListener('DOMContentLoaded', function () {
-        var el = document.querySelector('pikaday-decorator[locale="fr"]');
-        console.dir(el);
-    }, false)
-</script>
 </div>
 </body>
 </html>
