@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
     <meta charset="utf-8">
     <title>pikaday demo</title>
-    <script src="../webcomponentsjs/webcomponents.js"></script>
-    <script src="i18n/pikaday-decorator.fr.js"></script>
-    <link rel="import" href="pikaday-decorator.html">
+    <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
+    <script src="../i18n/pikaday-decorator.fr.js"></script>
+    <link rel="import" href="../pikaday-decorator.html">
     <style>
         #container {
             padding-top: 15%;
@@ -43,5 +43,10 @@
 
     </form>
 </div>
+<script>
+    window.addEventListener('DOMContentLoaded', function () {
+        document.body.removeAttribute('unresolved');
+    }, false);
+</script>
 </body>
 </html>
