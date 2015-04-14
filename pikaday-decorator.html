@@ -14,6 +14,14 @@
 
         properties: {
             /**
+             * Node witch trigger the display of the calendar
+             */
+            triggerSelector: {
+                type: 'String',
+                value: '[pikaday-decorator-trigger]'
+            },
+
+            /**
              * Default locale
              */
             locale: {
@@ -121,27 +129,27 @@
          * Not implementing isRTL (use <html dir="rtl"> instead)
          */
         ready: function() {
-            var input = this.querySelector('input'),
-                trigger = this.querySelector('[pikaday-decorator-trigger]'),
+            var input = Polymer.dom(this).querySelector('input'),
+                trigger = Polymer.dom(this).querySelector(this.triggerSelector),
                 opts = {
-                        field: input,
-                        position: this.position,
-                        repository: this.reposition,
-                        container: document.querySelector(this.container),
-                        format: this.format,
-                        defaultDate: this.defaultDate,
-                        setDefaultDate: this.setDefaultDate !== false,
-                        firstDay: this.firstDay,
-                        minDate: this.minDate ? moment(this.minDate).toDate() : false,
-                        maxDate: this.maxDate? moment(this.maxDate).toDate() : false,
-                        yearRange: this.yearRange,
-                        showWeekNumber: this.showWeekNumber,
-                        isRTL: this.isRtl,
-                        yearSuffix: this.yearSuffix,
-                        showMonthAfterYear: this.showMonthAfterYear,
-                        numberOfMonths: this.numberOfMonths,
-                        mainCalendar: this.mainCalendar
-                    }
+                    field: input,
+                    position: this.position,
+                    repository: this.reposition,
+                    container: document.querySelector(this.container),
+                    format: this.format,
+                    defaultDate: this.defaultDate,
+                    setDefaultDate: this.setDefaultDate !== false,
+                    firstDay: this.firstDay,
+                    minDate: this.minDate ? moment(this.minDate).toDate() : false,
+                    maxDate: this.maxDate? moment(this.maxDate).toDate() : false,
+                    yearRange: this.yearRange,
+                    showWeekNumber: this.showWeekNumber,
+                    isRTL: this.isRtl,
+                    yearSuffix: this.yearSuffix,
+                    showMonthAfterYear: this.showMonthAfterYear,
+                    numberOfMonths: this.numberOfMonths,
+                    mainCalendar: this.mainCalendar
+                }
             ;
 
             if (this.locale !== 'en') {
