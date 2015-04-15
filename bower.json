@@ -15,7 +15,7 @@
     ],
     "keywords": ["Polymer", "web-components", "datepicker", "html", "pikaday"],
     "dependencies": {
-        "polymer": "Polymer/polymer#^0.8.0-rc.2",
+        "polymer": "Polymer/polymer#^0.8.0-rc.4",
         "pikaday": "master",
         "momentjs": "2.*"
     },
