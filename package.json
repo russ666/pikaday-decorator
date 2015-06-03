@@ -4,7 +4,7 @@
     },
     "description": "Pikaday decorator with polymer",
     "devDependencies": {
-        "web-component-tester": "~2.0.1"
+        "web-component-tester": "~3.1.3"
     },
     "name": "pikaday-decorator",
     "repository": {
