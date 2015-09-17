@@ -1,6 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="stylesheet" href="../pikaday/css/pikaday.css">
-<script src="../momentjs/moment.js"></script>
 <script src="../pikaday/pikaday.js"></script>
 
 <dom-module id="pikaday-decorator">
@@ -140,8 +139,8 @@
                     defaultDate: this.defaultDate,
                     setDefaultDate: this.setDefaultDate !== false,
                     firstDay: this.firstDay,
-                    minDate: this.minDate ? moment(this.minDate).toDate() : false,
-                    maxDate: this.maxDate? moment(this.maxDate).toDate() : false,
+                    minDate: this.minDate && moment ? moment(this.minDate).toDate() : false,
+                    maxDate: this.maxDate && moment ? moment(this.maxDate).toDate() : false,
                     yearRange: this.yearRange,
                     showWeekNumber: this.showWeekNumber,
                     isRTL: this.isRtl,
