@@ -159,7 +159,8 @@
                 opts.trigger = trigger;
             }
 
-            this.instance = new Pikaday(opts);
+            if (opts.container || document.body)
+                this.instance = new Pikaday(opts);
         }
     });
 </script>
